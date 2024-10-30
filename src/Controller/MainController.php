@@ -13,7 +13,12 @@ class MainController extends AbstractController
     #[/* Symfony\Component\Routing\Attribute\ */ Route('/')]
     public function index(): Response
     {
-        return new Response('<h1>hello world!</h1>');
-        // return $this->render('main/index.html.twig');
+        // Method 1
+        //return new Response('<h1>hello world!</h1>');
+        
+         // The convention wants that the folder name is the name of
+         // the controller, and the name of the template is the method name
+         return $this->render('main/index.html.twig');
+        
     }
 }
